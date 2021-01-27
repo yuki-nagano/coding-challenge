@@ -1,5 +1,5 @@
 ## Yuki's coding practice repo!
-＊ Problems are from https://leetcode.com/ (so far)
+＊ Practice for data structure and algorithms using Java
 
 ＊ Commit message prefix:
 
@@ -7,6 +7,5 @@
 | ---- | ---- |
 |  :yellow_heart:  |  Solved with one approach |
 |  :heart:  |  Solved with several approaches |
-|  :blue_heart:  |  Solved but need to improve |
+|  :blue_heart:  |  Solved but need to improve or come back |
 |  :black_heart:  |  couldn't solve - need to come back |
-
