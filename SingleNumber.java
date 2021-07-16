@@ -1,18 +1,32 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        // input: [2,2,1]
-        // output: 1 (1 is a single number)
-        // time:  O(n)
-        // space: O(1)
-
-        // loop though the array
-        int[] copied = new int[nums.legnth];
-        System.arraycopy(nums, 0, copied, 0, nums.legnth);
-
-        while (nums.length > 1) {
-            for (int n : nums) {
-
+        // sort
+        Arrays.sort(nums); // O(nlogn)
+        int i = 0;
+        while (i < nums.length - 1) {
+            if (nums[i] == nums[i + 1]) {
+                i += 2;
+            } else {
+                return nums[i];
             }
         }
+        return nums[nums.length - 1]; // return the last one
     }
 }
+
+/*
+    Note:
+        2 pointers?
+        start:
+        i = 0
+        j = i + 1
+        if (nums[j]== nums[i]) {
+         remove numsj and numsi
+         0 1 2
+        [1,2,1,2,4]
+         i
+           j
+
+        [1,1,2,4,4]
+             i
+*/
