@@ -7,5 +7,4 @@
 | ---- | ---- |
 |  :yellow_heart:  |  Solved with one approach |
 |  :heart:  |  Solved with several approaches |
-|  :blue_heart:  |  Solved but need to improve or come back |
 |  :black_heart:  |  couldn't solve - need to come back |
