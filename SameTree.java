@@ -15,10 +15,26 @@
  */
 class Solution {
 
-    public boolean result = false;
-
     public boolean isSameTree(TreeNode p, TreeNode q) {
 
+        if (p == null && q == null) return true; // reaches leaf, means it's all true
+        if (p == null || q == null) return false;
+        if (p.val != q.val) return false;
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right); // needs to be both true
+    }
+}
+
+/*
+if p  and q val is equal return true
+if p val and q val is not equal return false
+if p == null, q != null, return false
+
+return isSameTree(p.right, q.right)
+*/
+
+
+/* 2nd attempt
         // pattern1
         //    1
         //  2   2
@@ -61,6 +77,8 @@ class Solution {
         helper(p.left, q.left);
     }
 }
+*/
+
 
 /* 1st attempt
         // root, right, left, if there was something wrong, false
