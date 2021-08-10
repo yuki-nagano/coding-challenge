@@ -13,13 +13,31 @@
  *     }
  * }
  */
+
+
 //         1
 //       2   2
-//        3 2
+//   null 3 2 null
 
 class Solution {
 
     public boolean isSymmetric(TreeNode root) {
+        return helper(root.left, root.right);
+    }
+
+    private boolean helper(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) return true;
+        if ((t1 == null && t2 != null) || (t1 != null && t2 == null)) {
+            return false;
+        }
+        if (t1.val != t2.val) {
+            return false;
+        }
+        return helper(t1.left, t2.right) && helper(t1.right, t2.left);
+    }
+}
+
+/* 2nd attempt
         if (root.left == null && root.right == null) {
             return true;
         }
@@ -42,6 +60,7 @@ class Solution {
         // &&: if there's at least one false, return false.
     }
 }
+*/
 
 /* 1st attempt
         // base
