@@ -14,3 +14,20 @@ class Solution:
  i
    j
  """
+
+# 2nd time with hint and discussion 
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        n_dict = {}
+
+        for n in nums:
+            if n in n_dict:
+                n_dict[n] = n_dict.get(n) + 1
+            else:
+                n_dict[n] = 1
+        
+        pairs = 0
+        for n in n_dict.values():
+            pairs += n * (n - 1) // 2
+
+        return pairs
