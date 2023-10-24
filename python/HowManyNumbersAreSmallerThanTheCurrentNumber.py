@@ -1,22 +1,33 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        nums_dict = {n: 0 for n in nums}
-        print(nums_dict.get(8))
+        sorted: list = nums.copy()
+        sorted.sort()
+        smaller_numbers: dict = {}
+        result: list = []
+        i = 0
+        for n in sorted:
+            print("n ", n)
+            print("smaller_numbers.get ", smaller_numbers.get(n))
+            if not smaller_numbers.get(n):
+                smaller_numbers[n] = i
+                print("dict ", smaller_numbers)
+            i += 1
+        
+        for n in nums:
+            result.append(smaller_numbers.get(n))
 
-        return [] 
+        return result
+
 """
-{
-    8: 0,
-    1: 0,
-    2: 0,
-    2: 0,
-    3: 0
-}
-This can't because of the key duplication case
+    1. sort
+    2. get the number of how many before self
+    3. put them into a map
 
-list 
-    sort
-    [1,2,2,3,8]
-     i
-       j
+    [6,5,4,8] -> [4,5,6,8]
+    {
+        6: 2
+        5: 1
+        4: 0,
+        8: 3
+    }
 """
