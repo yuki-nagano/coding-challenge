@@ -1,26 +1,27 @@
 class Solution:
     def decodeMessage(self, key: str, message: str) -> str:
-        s_table: dict = {}
+
+        # add space in advance not using if
+        s_table = {" ": " "}
         ascii: int = 97 # a
         decoded: str = ""
 
         # set up substitued table
-        for i in range(0, len(key)):
-            if key[i] not in s_table:
-                if key[i] == " ":
-                    s_table[key[i]] = " "
-                else: 
-                    s_table[key[i]] = chr(ascii)
-                    ascii += 1
+        for char in key:
+            if char not in s_table:
+                s_table[char] = chr(ascii)
+                ascii += 1
 
         # decode message
-        for j in range(0, len(message)):
-            decoded += s_table.get(message[j])
+        for char in message:
+            decoded += s_table[char]
         
         return decoded
 
         
 """
+Memo
+    for char in key - instead of for i in range(len(keys))
 set up substitued table
     adding each char of key into dict if not contains
     key: a ...
